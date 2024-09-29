@@ -42,3 +42,43 @@ export const Rewards=pgTable("rewards",{
 
 
 })
+
+export const Notifications=pgTable("notifications",{
+    id:serial("id").primaryKey(),
+    userId:integer("user_id").references(()=>Users.id).notNull(),
+    message:text("message").notNull(),
+    type:varchar("type",{length:50}).notNull(),
+    isRead:boolean("is_read").notNull().default(false),
+    createdAt:timestamp("created_at").defaultNow().notNull()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+})
